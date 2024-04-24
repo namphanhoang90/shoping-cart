@@ -1,4 +1,3 @@
-<!-- eslint-disable vue/multi-word-component-names -->
 <template>
   <div>
     <div v-for="item in cart" :key="item.product.id">
@@ -14,6 +13,7 @@
 import { mapState, mapActions } from 'vuex'
 
 export default {
+  name: 'CheckoutView',
   computed: {
     ...mapState(['cart'])
   },

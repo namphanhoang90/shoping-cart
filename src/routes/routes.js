@@ -4,7 +4,7 @@ import Checkout from "../views/Checkout.vue";
 
 const routes = [
   { path: "/", name: "List", component: List },
-  { path: "/detail/:id", name: "Detail", component: Detail },
+  { path: "/detail/:id", name: "Detail", component: Detail, props: true },
   { path: "/checkout", name: "Checkout", component: Checkout },
 ];
 

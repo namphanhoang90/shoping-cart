@@ -1,9 +1,9 @@
 <template>
-  <div>
+  <div @click="handleClick">
     <h2>{{ product.name }}</h2>
     <p>{{ product.description }}</p>
-    <button @click="$emit('delete', product.id)">Delete</button>
-    <button @click="$emit('update', product)">Update</button>
+    <button @click.stop="$emit('delete', product.id)">Delete</button>
+    <button @click.stop="$emit('update', product)">Update</button>
   </div>
 </template>
 
@@ -14,6 +14,11 @@ export default {
     product: {
       type: Object,
       required: true
+    }
+  },
+  methods: {
+    handleClick() {
+      this.$emit('product-click', this.product.id);
     }
   }
 }
